@@ -1,0 +1,36 @@
+
+
+=======================================================================
+
+Emacs Control M Trick 
+Date: Fri, 09 Aug 1996 20:15:45 -0500
+From: David Ishee <ishee@erc.msstate.edu>
+To: fiskjm@ctrvax.Vanderbilt.Edu
+Subject: $0.02 tip for removing Control M in emacs
+
+
+After looking at issue 8 about how to remove the pesky Control-M character in vi (vim or whatever) I had to also tell how it could be done in emacs. Say you loaded up a file that has the ^M all over the place. No problem, say M-x replace-string RET C-q C-M RET RET and you're done. Emacs rulz!!
+
+David
+
+=======================================================================
+
+From: "Jason M. Lenthe" <lenthe@mailhost.sju.edu> 
+To: plug@nitrous.nothinbut.net 
+Subject: Re: [Plug] removing ^M from emacs 
+Date: Wed, 23 Jun 1999 07:53:55 -0400 
+Reply-to: plug@nitrous.nothinbut.net 
+Sender: plug-admin@nitrous.nothinbut.net 
+
+
+My favorite way of doing this is at the command prompt do:
+
+cat <FileName> | tr -d '\r' > out; mv out <FileName>
+
+At 01:21 AM 6/23/99 -0400, you wrote:
+>I have code created on windows that I want use on emacs. the text file
+>created on windows has a ^M at the end of the line when read in from
+>emacs. How do I get rid of those ^M?
+
+=======================================================================
+
