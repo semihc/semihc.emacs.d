@@ -1,0 +1,30 @@
+
+* Emacs
+** Building
+   - v23.2
+     export CC=cc
+     export CXX=CC
+     export CFLAGS="-xannotate=no -xO3"
+     export CXXFLAGS="-xannotate=no -xO3"
+     ./configure --prefix=/stow/emacs-23.2  --with-gif=no 2>&1 |tee conf.log
+     gmake 2>&1 |tee make.log
+     gmake install 2>&1 |tee inst.log
+     stow -v -d /stow -t /usr/local -D emacs-23.1
+     stow -v -d /stow -t /usr/local -S emacs-23.2
+
+   - v23.3 on Ubuntu
+     sudo apt-get install libgtk2.0-dev
+     sudo apt-get install libgtk2.0-doc
+     sudo apt-get install libgnutls
+     sudo apt-get install libgnutls-dev
+     ./configure --prefix=/stow/emacs-23.3 --with-gif=no --with-x-toolkit=gtk 2>&1 |tee conf.log
+     make 2>&1 |tee make.log
+     make install 2>&1 |tee inst.log
+     sudo stow -v -d /stow -t /usr/local -S emacs-23.3
+
+** Tips
+   [[file:Tips.org]]
+
+** Manuals
+   [[file:emacs.pdf][Emacs manual]]
+   [[file:org.pdf][Org mode manual]]
